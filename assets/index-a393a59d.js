@@ -172,4 +172,4 @@ Error generating stack: `+i.message+`
   @media (max-width: 375px) {
     width: 375px;
   }
-`;function p2(){return L.jsx(L.Fragment,{children:L.jsx(d2,{children:L.jsx(SS,{children:L.jsxs(hr,{path:"/",element:L.jsx(WC,{}),children:[L.jsx(hr,{path:"client",element:L.jsx(i2,{})}),L.jsx(hr,{path:"product",element:L.jsx(u2,{})}),L.jsx(hr,{path:"pack",element:L.jsx(c2,{})}),L.jsx(hr,{path:"order",element:L.jsx(a2,{})}),L.jsx(hr,{path:"completed",element:L.jsx(f2,{})})]})})})})}Ga.createRoot(document.getElementById("root")).render(L.jsx(Rr.StrictMode,{children:L.jsx(PS,{children:L.jsx(p2,{})})}))});export default h2();
+`;function p2(){return L.jsx(L.Fragment,{children:L.jsx(d2,{children:L.jsx(SS,{children:L.jsxs(hr,{path:"/",element:L.jsx(WC,{}),children:[L.jsx(hr,{path:"client",element:L.jsx(i2,{})}),L.jsx(hr,{path:"product",element:L.jsx(u2,{})}),L.jsx(hr,{path:"pack",element:L.jsx(c2,{})}),L.jsx(hr,{path:"order",element:L.jsx(a2,{})}),L.jsx(hr,{path:"completed",element:L.jsx(f2,{})})]})})})})}Ga.createRoot(document.getElementById("root")).render(L.jsx(Rr.StrictMode,{children:L.jsx(PS,{basename:"/car_rent_test",children:L.jsx(p2,{})})}))});export default h2();
