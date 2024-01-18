@@ -1,11 +1,11 @@
 {
-  "name": "app-return-pack",
+  "name": "car_rent_test",
   "private": true,
   "version": "0.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build --base=/app-return-pack/",
+    "build": "vite build --base=/car_rent_test/",
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview"
   },
