@@ -7,7 +7,6 @@ import Button from "../Button/Button";
 const Container = styled.div`
   margin: auto;
   width: 274px;
-  /* border: 2px solid red; */
 `;
 
 const WrapImg = styled.div`
@@ -39,7 +38,15 @@ const TitleCard = styled.div`
   }
 `;
 
+const WrapDescription = styled.div`
+  margin-bottom: 28px;
+`;
+
 const CardAuto = () => {
+  const handleButtonClick = () => {
+    console.log("Кнопка натиснута");
+  };
+
   const data = {
     city: "Kharkiv",
     country: "Ukraine",
@@ -63,9 +70,16 @@ const CardAuto = () => {
         </h3>
         <h3>$40</h3>
       </TitleCard>
-      <DescriptionCardAuto data={data} />
-      <DescriptionCardAuto data={first} />
-      <Button text={"Save"} width={247} />
+      <WrapDescription>
+        <DescriptionCardAuto data={data} />
+        <DescriptionCardAuto data={first} />
+      </WrapDescription>
+      <Button
+        text={"Learn more"}
+        paddingVertical="12px"
+        paddingHorizontal="99px"
+        onClick={handleButtonClick}
+      />
     </Container>
   );
 };
