@@ -254,4 +254,4 @@ ul {
 ul{
   list-style: none;
 }
-`;function V0(){return L.jsxs(L.Fragment,{children:[L.jsx(W0,{}),L.jsx(B0,{children:L.jsx(sv,{children:L.jsx(gd,{path:"/",element:L.jsx(U0,{})})})})]})}ui.createRoot(document.getElementById("root")).render(L.jsx(Qe.StrictMode,{children:L.jsx(hv,{children:L.jsx(V0,{})})}));
+`;function V0(){return L.jsxs(L.Fragment,{children:[L.jsx(W0,{}),L.jsx(B0,{children:L.jsx(sv,{children:L.jsx(gd,{path:"/",element:L.jsx(U0,{})})})})]})}ui.createRoot(document.getElementById("root")).render(L.jsx(Qe.StrictMode,{children:L.jsx(hv,{basename:"/car_rent_test",children:L.jsx(V0,{})})}));
