@@ -1,14 +1,14 @@
 import { Route, Routes } from "react-router-dom";
 import { Layout } from "./components/Layout/Layout";
 import { Container } from "./App.styled";
-import { GlobalStyle } from "./components/common/GlobalStyles";
+import { GlobalStyle } from "./components/common/globalStyles.js";
 import Main from "./components/Pages/Main";
 import Home from "./components/Pages/Home";
 
 function App() {
   return (
     <>
-      <GlobalStyle />
+      {/* <GlobalStyle /> */}
       <Container>
         <Routes>
           <Route path="/" element={<Layout />}>
