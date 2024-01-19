@@ -1,7 +1,7 @@
 import { Route, Routes } from "react-router-dom";
 import { Layout } from "./components/Layout/Layout";
 import { Container } from "./App.styled";
-import { GlobalStyle } from "../src/components/common/GlobalStyles";
+import GlobalStyle from "./components/common/GlobalStyles";
 import Main from "./components/Pages/Main";
 
 function App() {
