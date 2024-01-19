@@ -122,7 +122,7 @@ Error generating stack: `+o.message+`
   @media (max-width: 375px) {
     width: 375px;
   }
-`;Eg`
+`;const Mg=Eg`
 
 @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap');
 body{
@@ -189,7 +189,7 @@ ul {
 ul{
   list-style: none;
 }
-`;const pu="/car_rent_test/assets/sprite-42231e84.svg",Pt={whitePrimary:"#FFF",whiteSecondary:"#F7F7FB",blackPrimary:"#121417",bluePrimary:"#3470FF",blueSecondary:"#0B44CD",greyColor:"#12141780"},Mg=se.ul`
+`,pu="/car_rent_test/assets/sprite-42231e84.svg",Pt={whitePrimary:"#FFF",whiteSecondary:"#F7F7FB",blackPrimary:"#121417",bluePrimary:"#3470FF",blueSecondary:"#0B44CD",greyColor:"#12141780"},Dg=se.ul`
   display: flex;
   flex-wrap: wrap;
   column-gap: 6px;
@@ -210,7 +210,7 @@ ul{
   span {
     margin-right: 6px;
   }
-`,Ga=({data:e})=>R.jsx("div",{children:R.jsx(Mg,{children:Object.entries(e).map(([,t],n,r)=>R.jsxs("li",{children:[R.jsx("span",{children:t}),n!==r.length-1&&R.jsx("svg",{width:2,height:16,children:R.jsx("use",{href:`${pu}#line`})})]},n))})}),Dg=se.button`
+`,Ga=({data:e})=>R.jsx("div",{children:R.jsx(Dg,{children:Object.entries(e).map(([,t],n,r)=>R.jsxs("li",{children:[R.jsx("span",{children:t}),n!==r.length-1&&R.jsx("svg",{width:2,height:16,children:R.jsx("use",{href:`${pu}#line`})})]},n))})}),Fg=se.button`
   display: flex;
   max-width: 274px;
   padding: 12px 99px;
@@ -234,10 +234,10 @@ ul{
     outline: none;
     background: ${Pt.blueSecondary};
   }
-`,Fg=({text:e,paddingVertical:t,paddingHorizontal:n,onClick:r})=>{const l={paddingTop:t,paddingBottom:t,paddingLeft:n,paddingRight:n};return R.jsx(R.Fragment,{children:R.jsx(Dg,{style:l,onClick:r,children:e})})},Ag=se.div`
+`,Ag=({text:e,paddingVertical:t,paddingHorizontal:n,onClick:r})=>{const l={paddingTop:t,paddingBottom:t,paddingLeft:n,paddingRight:n};return R.jsx(R.Fragment,{children:R.jsx(Fg,{style:l,onClick:r,children:e})})},Ug=se.div`
   margin: auto;
   width: 274px;
-`,Ug=se.div`
+`,Bg=se.div`
   position: relative;
   border-radius: 14px;
   background: linear-gradient(
@@ -254,7 +254,7 @@ ul{
   top: 14px;
   right: 14px;
   fill: ${Pt.whitePrimary};
-`,Bg=se.div`
+`,Wg=se.div`
   font-family: Manrope;
   font-size: 16px;
   font-style: normal;
@@ -267,6 +267,6 @@ ul{
   span {
     color: ${Pt.bluePrimary};
   }
-`,Wg=se.div`
+`,Vg=se.div`
   margin-bottom: 28px;
-`,Vg=()=>{const[e,t]=E.useState(null),n=12,r=()=>{if(e===null){t(n),localStorage.setItem("like",JSON.stringify(n));return}t(null),localStorage.removeItem("like")},l=()=>{console.log("Кнопка натиснута")},o={city:"Kharkiv",country:"Ukraine",company:"Adventure Car Rentals"},i={type:"Suv",make:"Hummer",mileage:"9587",functionalities:"Stability control"};return R.jsxs(Ag,{children:[R.jsxs(Ug,{children:[e===null?R.jsx(Xa,{width:18,height:18,onClick:r,children:R.jsx("use",{href:`${pu}#heart-of`})}):R.jsx(Xa,{width:18,height:18,onClick:r,children:R.jsx("use",{href:`${pu}#heart-on`})}),R.jsx("img",{src:"https://fs10.fex.net/preview/4837828553/0x0",alt:"Foto auto",width:274,height:268})]}),R.jsxs(Bg,{children:[R.jsxs("h3",{children:["Hummer ",R.jsx("span",{children:"Enclave"}),", 2006"]}),R.jsx("h3",{children:"$40"})]}),R.jsxs(Wg,{children:[R.jsx(Ga,{data:o}),R.jsx(Ga,{data:i})]}),R.jsx(Fg,{text:"Learn more",paddingVertical:"12px",paddingHorizontal:"99px",onClick:l})]})},Hg=()=>R.jsx("div",{children:R.jsx(Vg,{})}),Za=()=>R.jsx("div",{children:"Home"});function Qg(){return R.jsx(R.Fragment,{children:R.jsx(jg,{children:R.jsx(fv,{children:R.jsxs(or,{path:"/",element:R.jsx($g,{}),children:[R.jsx(or,{index:!0,element:R.jsx(Za,{})}),R.jsx(or,{path:"/catalog",element:R.jsx(Hg,{})}),R.jsx(or,{path:"*",element:R.jsx(Za,{})})]})})})})}ai.createRoot(document.getElementById("root")).render(R.jsx(Qe.StrictMode,{children:R.jsx(gv,{basename:"/car_rent_test",children:R.jsx(Qg,{})})}));
+`,Hg=()=>{const[e,t]=E.useState(null),n=12,r=()=>{if(e===null){t(n),localStorage.setItem("like",JSON.stringify(n));return}t(null),localStorage.removeItem("like")},l=()=>{console.log("Кнопка натиснута")},o={city:"Kharkiv",country:"Ukraine",company:"Adventure Car Rentals"},i={type:"Suv",make:"Hummer",mileage:"9587",functionalities:"Stability control"};return R.jsxs(Ug,{children:[R.jsxs(Bg,{children:[e===null?R.jsx(Xa,{width:18,height:18,onClick:r,children:R.jsx("use",{href:`${pu}#heart-of`})}):R.jsx(Xa,{width:18,height:18,onClick:r,children:R.jsx("use",{href:`${pu}#heart-on`})}),R.jsx("img",{src:"https://fs10.fex.net/preview/4837828553/0x0",alt:"Foto auto",width:274,height:268})]}),R.jsxs(Wg,{children:[R.jsxs("h3",{children:["Hummer ",R.jsx("span",{children:"Enclave"}),", 2006"]}),R.jsx("h3",{children:"$40"})]}),R.jsxs(Vg,{children:[R.jsx(Ga,{data:o}),R.jsx(Ga,{data:i})]}),R.jsx(Ag,{text:"Learn more",paddingVertical:"12px",paddingHorizontal:"99px",onClick:l})]})},Qg=()=>R.jsx("div",{children:R.jsx(Hg,{})}),Za=()=>R.jsx("div",{children:"Home"});function Kg(){return R.jsxs(R.Fragment,{children:[R.jsx(Mg,{}),R.jsx(jg,{children:R.jsx(fv,{children:R.jsxs(or,{path:"/",element:R.jsx($g,{}),children:[R.jsx(or,{index:!0,element:R.jsx(Za,{})}),R.jsx(or,{path:"/catalog",element:R.jsx(Qg,{})}),R.jsx(or,{path:"*",element:R.jsx(Za,{})})]})})})]})}ai.createRoot(document.getElementById("root")).render(R.jsx(Qe.StrictMode,{children:R.jsx(gv,{basename:"/car_rent_test",children:R.jsx(Kg,{})})}));
