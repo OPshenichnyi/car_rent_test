@@ -8,7 +8,7 @@ import Home from "./components/Pages/Home";
 function App() {
   return (
     <>
-      {/* <GlobalStyle /> */}
+      <GlobalStyle />
       <Container>
         <Routes>
           <Route path="/" element={<Layout />}>
