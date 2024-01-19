@@ -1,7 +1,7 @@
 import { Route, Routes } from "react-router-dom";
 import { Layout } from "./components/Layout/Layout";
 import { Container } from "./App.styled";
-import { GlobalStyle } from "./components/common/GlobalStyles";
+import { GlobalStyle } from "./components/common/GlobalStyles.js";
 import Main from "./components/Pages/Main";
 import Home from "./components/Pages/Home";
 
