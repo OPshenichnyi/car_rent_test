@@ -17,7 +17,7 @@ export const WraperNavBar = styled.div`
 `;
 
 export const Logo = styled.span`
-  color: white;
+  color: black;
   font-size: 22px;
   font-weight: 600;
   text-shadow: 4px 4px 12px rgba(232, 232, 245, 1);
@@ -26,7 +26,7 @@ export const Logo = styled.span`
 export const BtnNavBar = styled(NavLink)`
   text-decoration: none;
 
-  color: white;
+  color: black;
   &:hover {
     color: black;
   }

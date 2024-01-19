@@ -4,30 +4,13 @@ export const NavBar = () => {
   return (
     <nav>
       <WraperNavBar>
-        <Logo> APP-RETURN-PACK</Logo>
+        <Logo> CAR-RENT</Logo>
         <ul>
           <li>
-            <BtnNavBar to="/client">Client List</BtnNavBar>
+            <BtnNavBar to="/catalog">Catalog</BtnNavBar>
           </li>
           <li>
-            <BtnNavBar to="/product">Product List</BtnNavBar>
-          </li>
-          <li>
-            <BtnNavBar to="/pack">Pack List</BtnNavBar>
-          </li>
-          <li>
-            <BtnNavBar to="/order">Order List</BtnNavBar>
-          </li>
-          <li>
-            <BtnNavBar to="/completed">Completed operation</BtnNavBar>
-          </li>
-        </ul>
-        <ul>
-          <li>
-            <BtnNavBar>Register</BtnNavBar>
-          </li>
-          <li>
-            <BtnNavBar>LogIn</BtnNavBar>
+            <BtnNavBar to="/favorites">Favorites</BtnNavBar>
           </li>
         </ul>
       </WraperNavBar>
