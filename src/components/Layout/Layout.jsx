@@ -3,7 +3,6 @@ import { Outlet } from "react-router-dom";
 import { NavBar } from "../NavBar/NavBar";
 import { ContainerLayout, Header, ContainerMain } from "./layout.styled";
 import Footer from "../Footer/Footer";
-import CardAuto from "../CardAuto/CardAuto";
 
 export const Layout = () => {
   return (
@@ -16,7 +15,6 @@ export const Layout = () => {
           <Suspense>
             <Outlet />
           </Suspense>
-          <CardAuto />
         </ContainerMain>
       </ContainerLayout>
       <Footer />

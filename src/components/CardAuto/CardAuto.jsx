@@ -1,48 +1,30 @@
-import img from "../../img/2007 Audi A4 3.2 FSI Quattro S-Line Sedan (UK) 001.jpg";
-import styled from "styled-components";
-import variables from "../common/Variables";
 import DescriptionCardAuto from "../DescriptionCardAuto/DescriptionCardAuto";
 import Button from "../Button/Button";
-
-const Container = styled.div`
-  margin: auto;
-  width: 274px;
-`;
-
-const WrapImg = styled.div`
-  position: relative;
-  border-radius: 14px;
-  background: linear-gradient(
-      180deg,
-      rgba(18, 20, 23, 0.5) 2.5%,
-      rgba(18, 20, 23, 0) 41.07%
-    ),
-    #f3f3f2;
-  overflow: hidden;
-  border: 1px solid #ccc;
-  margin-bottom: 14px;
-`;
-
-const TitleCard = styled.div`
-  font-family: Manrope;
-  font-size: 16px;
-  font-style: normal;
-  font-weight: 500;
-  line-height: 24px;
-  color: ${variables.blackPrimary};
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 8px;
-  span {
-    color: ${variables.bluePrimary};
-  }
-`;
-
-const WrapDescription = styled.div`
-  margin-bottom: 28px;
-`;
+import sprite from "../../../images/sprite.svg";
+import { useState } from "react";
+import {
+  Container,
+  WrapImg,
+  HeartSvg,
+  TitleCard,
+  WrapDescription,
+} from "./CardAuto.styled";
 
 const CardAuto = () => {
+  const [addLike, setAddLike] = useState(null);
+
+  const id = 12;
+
+  const handleHeartClick = () => {
+    if (addLike === null) {
+      setAddLike(id);
+      localStorage.setItem("like", JSON.stringify(id));
+      return;
+    }
+    setAddLike(null);
+    localStorage.removeItem("like");
+  };
+
   const handleButtonClick = () => {
     console.log("Кнопка натиснута");
   };
@@ -62,7 +44,21 @@ const CardAuto = () => {
   return (
     <Container>
       <WrapImg>
-        <img src={img} alt="Foto auto" width={274} height={268} />
+        {addLike === null ? (
+          <HeartSvg width={18} height={18} onClick={handleHeartClick}>
+            <use href={`${sprite}#heart-of`} />
+          </HeartSvg>
+        ) : (
+          <HeartSvg width={18} height={18} onClick={handleHeartClick}>
+            <use href={`${sprite}#heart-on`} />
+          </HeartSvg>
+        )}
+        <img
+          src="https://fs10.fex.net/preview/4837828553/0x0"
+          alt="Foto auto"
+          width={274}
+          height={268}
+        />
       </WrapImg>
       <TitleCard>
         <h3>
