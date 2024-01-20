@@ -67,6 +67,7 @@ const CardAuto = (value) => {
         <DescriptionCardAuto data={{ type, make, mileage, option }} />
       </WrapDescription>
       <Button
+        type="button"
         text={"Learn more"}
         paddingVertical="12px"
         paddingHorizontal="99px"
