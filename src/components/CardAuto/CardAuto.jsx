@@ -10,10 +10,23 @@ import {
   WrapDescription,
 } from "./CardAuto.styled";
 
-const CardAuto = () => {
-  const [addLike, setAddLike] = useState(null);
+const CardAuto = (value) => {
+  const {
+    id,
+    year,
+    make,
+    model,
+    type,
+    img,
+    rentalPrice,
+    rentalCompany,
+    mileage,
+    option,
+    city,
+    country,
+  } = value.data;
 
-  const id = 12;
+  const [addLike, setAddLike] = useState(null);
 
   const handleHeartClick = () => {
     if (addLike === null) {
@@ -29,18 +42,6 @@ const CardAuto = () => {
     console.log("Кнопка натиснута");
   };
 
-  const data = {
-    city: "Kharkiv",
-    country: "Ukraine",
-    company: "Adventure Car Rentals",
-  };
-
-  const first = {
-    type: "Suv",
-    make: "Hummer",
-    mileage: "9587",
-    functionalities: "Stability control",
-  };
   return (
     <Container>
       <WrapImg>
@@ -53,22 +54,17 @@ const CardAuto = () => {
             <use href={`${sprite}#heart-on`} />
           </HeartSvg>
         )}
-        <img
-          src="https://fs10.fex.net/preview/4837828553/0x0"
-          alt="Foto auto"
-          width={274}
-          height={268}
-        />
+        <img src={img} alt="Foto auto" width={274} height={268} />
       </WrapImg>
       <TitleCard>
         <h3>
-          Hummer <span>Enclave</span>, 2006
+          {make} <span>{model}</span>, {year}
         </h3>
-        <h3>$40</h3>
+        <h3>{rentalPrice}</h3>
       </TitleCard>
       <WrapDescription>
-        <DescriptionCardAuto data={data} />
-        <DescriptionCardAuto data={first} />
+        <DescriptionCardAuto data={{ city, country, rentalCompany }} />
+        <DescriptionCardAuto data={{ type, make, mileage, option }} />
       </WrapDescription>
       <Button
         text={"Learn more"}
