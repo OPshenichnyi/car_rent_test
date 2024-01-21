@@ -2,8 +2,9 @@ import { createSlice } from "@reduxjs/toolkit";
 import { getCarsCatalog } from "./operationCarAPI";
 
 const initialState = {
+  IdUpload: [],
   carsCatalog: [],
-  page: 1,
+  page: 0,
   isLoad: false,
   statusError: null,
 };
@@ -17,7 +18,8 @@ const carsSlice = createSlice({
       state.isLoad = true;
     });
     builder.addCase(getCarsCatalog.fulfilled, (state, action) => {
-      state.carsCatalog = state.carsCatalog.concat(action.payload);
+      state.page = state.page + action.payload.length;
+      state.carsCatalog = [...state.carsCatalog, ...action.payload];
       state.isLoad = false;
     });
     builder.addCase(getCarsCatalog.rejected, (state) => {

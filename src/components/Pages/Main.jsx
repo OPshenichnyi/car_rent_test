@@ -25,19 +25,24 @@ const WrapLink = styled.div`
 `;
 
 const Main = () => {
+  const countPages = useSelector(selectIsPageCatalog);
   const catalog = useSelector(selectIsCarsCatalog);
-  const page = useSelector(selectIsPageCatalog);
-  const [pages, setPages] = useState(page);
+  const [pages, setPages] = useState(1);
   const dispatch = useDispatch();
+  const limits = 12 * pages;
+  const lastPage = Number.isInteger(countPages / 12);
+  const catalogLenths = catalog.length;
 
   useEffect(() => {
-    dispatch(getCarsCatalog(pages));
-  }, [dispatch, pages]);
+    if (catalogLenths < limits && lastPage) {
+      dispatch(getCarsCatalog(pages));
+    }
+  }, [dispatch, pages, limits, catalogLenths, lastPage]);
 
-  const handleButtonClick = () => {
+  const handleButtonClick = (evt) => {
+    evt.preventDefault();
     setPages(pages + 1);
   };
-
   const infoCarRent = catalog.map(
     ({
       id,
@@ -86,7 +91,9 @@ const Main = () => {
           <CardAuto key={item.id} data={item} />
         ))}
         <WrapLink>
-          <Link onClick={handleButtonClick} text={"Load more"} />
+          {lastPage !== false && catalogLenths !== 0 && (
+            <Link onClick={handleButtonClick} text={"Load more"} />
+          )}
         </WrapLink>
       </ContainerMain>
     </div>

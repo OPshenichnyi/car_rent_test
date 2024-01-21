@@ -9,6 +9,7 @@ import {
   TitleCard,
   WrapDescription,
 } from "./CardAuto.styled";
+import { useEffect } from "react";
 
 const CardAuto = (value) => {
   const {
@@ -28,18 +29,44 @@ const CardAuto = (value) => {
 
   const [addLike, setAddLike] = useState(null);
 
+  useEffect(() => {
+    const storedData = localStorage.getItem("favorites");
+    if (localStorage.length !== 0) {
+      const idCard = storedData.includes(id);
+      if (idCard) {
+        setAddLike(idCard);
+      }
+    }
+  }, [id]);
+
   const handleHeartClick = () => {
     if (addLike === null) {
-      setAddLike(id);
-      localStorage.setItem("like", JSON.stringify(id));
+      setAddLike(true);
+      addFavorites(id);
       return;
     }
+    removeFavorites(id);
     setAddLike(null);
-    localStorage.removeItem("like");
+  };
+
+  const addFavorites = (newItemId) => {
+    const favorites = JSON.parse(localStorage.getItem("favorites")) || [];
+    if (!favorites.includes(newItemId)) {
+      favorites.push(newItemId);
+      localStorage.setItem("favorites", JSON.stringify(favorites));
+    }
+  };
+
+  const removeFavorites = (remItemId) => {
+    const favorites = JSON.parse(localStorage.getItem("favorites")) || [];
+    if (favorites.includes(remItemId)) {
+      const updatedFavorites = favorites.filter((id) => id !== remItemId);
+      localStorage.setItem("favorites", JSON.stringify(updatedFavorites));
+    }
   };
 
   const handleButtonClick = () => {
-    console.log("Кнопка натиснута");
+    console.log("Кнопка favorite натиснута");
   };
 
   return (
