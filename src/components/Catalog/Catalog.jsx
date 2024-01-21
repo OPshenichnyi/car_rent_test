@@ -28,6 +28,7 @@ const Catalog = () => {
   const countPages = useSelector(selectIsPageCatalog);
   const catalog = useSelector(selectIsCarsCatalog);
   const [pages, setPages] = useState(1);
+
   const dispatch = useDispatch();
   const limits = 12 * pages;
   const lastPage = Number.isInteger(countPages / 12);
@@ -68,6 +69,7 @@ const Catalog = () => {
       }
       const city = getLastTwoWords(address)[0];
       const country = getLastTwoWords(address)[1];
+
       return {
         id,
         year,

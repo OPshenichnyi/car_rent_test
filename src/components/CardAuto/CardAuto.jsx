@@ -1,14 +1,11 @@
 import DescriptionCardAuto from "../DescriptionCardAuto/DescriptionCardAuto";
 import Button from "../Button/Button";
+import Heart from "../Heart/Heart";
+import FotoCar from "../FotoCar/FotoCar";
+import Modal from "../Modal/Modal";
 import sprite from "../../../images/sprite.svg";
 import { useState } from "react";
-import {
-  Container,
-  WrapImg,
-  HeartSvg,
-  TitleCard,
-  WrapDescription,
-} from "./CardAuto.styled";
+import { Container, TitleCard, WrapDescription } from "./CardAuto.styled";
 import { useEffect } from "react";
 
 const CardAuto = (value) => {
@@ -28,6 +25,11 @@ const CardAuto = (value) => {
   } = value.data;
 
   const [addLike, setAddLike] = useState(null);
+  const [isModal, setIsModal] = useState(false);
+
+  const closeModalWindow = () => {
+    setIsModal(false);
+  };
 
   useEffect(() => {
     const storedData = localStorage.getItem("favorites");
@@ -65,24 +67,14 @@ const CardAuto = (value) => {
     }
   };
 
-  const handleButtonClick = () => {
-    console.log("Кнопка favorite натиснута");
+  const handleButtonClick = (evt) => {
+    setIsModal(evt);
   };
 
   return (
     <Container>
-      <WrapImg>
-        {addLike === null ? (
-          <HeartSvg width={18} height={18} onClick={handleHeartClick}>
-            <use href={`${sprite}#heart-of`} />
-          </HeartSvg>
-        ) : (
-          <HeartSvg width={18} height={18} onClick={handleHeartClick}>
-            <use href={`${sprite}#heart-on`} />
-          </HeartSvg>
-        )}
-        <img src={img} alt="Foto auto" width={274} height={268} />
-      </WrapImg>
+      <FotoCar src={img} width={274} height={268} />
+      <Heart props={{ addLike, handleHeartClick, sprite }} />
       <TitleCard>
         <h3>
           {make} <span>{model}</span>, {year}
@@ -98,8 +90,13 @@ const CardAuto = (value) => {
         text={"Learn more"}
         paddingVertical="12px"
         paddingHorizontal="99px"
-        onClick={handleButtonClick}
+        onClick={() => {
+          handleButtonClick(id);
+        }}
       />
+      {isModal === id && (
+        <Modal value={id} closeModalWindow={closeModalWindow}></Modal>
+      )}
     </Container>
   );
 };
