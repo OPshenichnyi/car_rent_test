@@ -5,3 +5,5 @@ export const selectIsPageCatalog = (state) => state.auto.page;
 export const selectIsLoad = (state) => state.auto.isLoad;
 
 export const selectIsStatusError = (state) => state.auto.statusError;
+
+export const selectIsFavorites = (state) => state.auto.favorites;

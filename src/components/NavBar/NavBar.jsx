@@ -10,7 +10,7 @@ export const NavBar = () => {
             <BtnNavBar to="/catalog">Catalog</BtnNavBar>
           </li>
           <li>
-            <BtnNavBar to="/favorites">Favorites</BtnNavBar>
+            <BtnNavBar to="/catalog/favorites">Favorites</BtnNavBar>
           </li>
         </ul>
       </WraperNavBar>

@@ -12,7 +12,7 @@ export const Layout = () => {
           <NavBar />
         </Header>
         <ContainerMain>
-          <Suspense>
+          <Suspense fallback={<div>Loading ...</div>}>
             <Outlet />
           </Suspense>
         </ContainerMain>

@@ -14,3 +14,19 @@ export const getCarsCatalog = createAsyncThunk(
     }
   }
 );
+
+export const getFavoriteCars = createAsyncThunk(
+  "auto/favorites",
+  async (credential, thunkApi) => {
+    const storedData = localStorage.getItem("favorites");
+    try {
+      const response = await axios.get(`/cars`);
+      const favoritesCars = await response.data.filter((item) =>
+        storedData.includes(item.id)
+      );
+      return favoritesCars;
+    } catch (error) {
+      return thunkApi.rejectWithValue(error.message);
+    }
+  }
+);
