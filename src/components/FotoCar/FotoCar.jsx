@@ -11,13 +11,25 @@ export const WrapImg = styled.div`
   overflow: hidden;
   border: 1px solid #ccc;
   margin-bottom: 14px;
+  img {
+    object-fit: cover;
+  }
 `;
 
 const FotoCar = ({ src, width, height }) => {
   return (
     <>
-      <WrapImg>
-        <img src={src} alt="Foto auto" width={width} height={height} />
+      <WrapImg
+        style={{
+          width: `${width}px`,
+          height: `${height}px`,
+        }}
+      >
+        <img
+          src={src}
+          alt="Foto auto"
+          style={{ width: "100%", height: "100%" }}
+        />
       </WrapImg>
     </>
   );
