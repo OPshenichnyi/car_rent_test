@@ -1,9 +1,9 @@
-import { Outlet } from "react-router-dom";
+import Catalog from "../Catalog/Catalog";
 
 const Main = () => {
   return (
     <>
-      <Outlet />
+      <Catalog />
     </>
   );
 };
